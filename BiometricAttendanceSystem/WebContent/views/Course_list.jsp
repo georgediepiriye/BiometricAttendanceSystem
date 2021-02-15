@@ -11,7 +11,7 @@
 <body>
 	<div class="container">
 	<p>${message}</p>
-		<button class="btn btn-primary" onclick="window.location.href='views/course-add.jsp'">Add Course </button>
+		<button class="btn btn-primary" onclick="window.location.href='views/Course_add.jsp'">Add Course </button>
 		<table border="1" class="table table-striped table-bordered">
 		<tr class="thead-dark">
 		
@@ -36,4 +36,4 @@
 	</div>
 
 </body>
-</html>ml>
+</html>

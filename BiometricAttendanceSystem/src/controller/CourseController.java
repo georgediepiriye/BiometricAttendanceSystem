@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +17,7 @@ import entity.Course;
 /**
  * Servlet implementation class CourseController
  */
+@WebServlet("/CourseController")
 public class CourseController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -115,10 +117,9 @@ public void getSingleCourse(HttpServletRequest request, HttpServletResponse resp
 		
 		//forward the request and response
 		dispatcher.forward(request, response);
-
-		
-				
+	
 	}
+
 
 private void deleteCourse(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	String id = request.getParameter("id");
