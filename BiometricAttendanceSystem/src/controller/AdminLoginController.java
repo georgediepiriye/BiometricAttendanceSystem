@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.AdminLoginDao;
 import dao.AdminLoginDaoImpl;
@@ -19,7 +20,6 @@ public class AdminLoginController extends HttpServlet {
 	
        
 	public AdminLoginController() {
-		
 		adminLoginDao = new AdminLoginDaoImpl();
 	}
 
@@ -29,6 +29,7 @@ public class AdminLoginController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		HttpSession session = request.getSession();
 		AdminLogin adminLogin = new AdminLogin();
 		adminLogin.setAdminEmail(request.getParameter("adminEmail"));
 		adminLogin.setAdminPassword(request.getParameter("adminPassword"));
@@ -36,7 +37,9 @@ public class AdminLoginController extends HttpServlet {
 		String status = adminLoginDao.authenticate(adminLogin);
 		
 		if(status.equals("true")) {
-			response.sendRedirect("CourseController?action=LIST");
+			session.setAttribute("admin_email", adminLogin.getAdminEmail());
+			response.sendRedirect("views/AdminHomePage.jsp");
+			
 		}
 		if(status.equals("false")) {
 			response.sendRedirect("Admin_login.jsp?status=false");

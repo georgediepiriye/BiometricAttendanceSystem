@@ -10,10 +10,15 @@
 <body>
     
     <div class="container">
-      <button class="btn btn-primary" onclick="window.location.href='views/Course_list.jsp'">Course List</button>
-      <button class="btn btn-primary" onclick="window.location.href='views/Lectuter_list.jsp'">Lecturer List</button>
+      
+        <a href="${pageContext.request.contextPath}/CourseController?action=LIST" class="btn btn-primary">Course List</a>
+         <a href="${pageContext.request.contextPath}/LecturerController?action=LIST" class="btn btn-primary">Lecturer List</a>
+      
+   
        <button class="btn btn-primary" onclick="window.location.href='views/Student_list.jsp'">Student List</button>
-      <button class="btn btn-primary">Logout</button>
+      <div class="float-right">
+		<a href="${pageContext.request.contextPath}/AdminLogout.jsp">Logout</a>
+		</div>
     
     
     </div>

@@ -72,19 +72,28 @@ public class CourseController extends HttpServlet {
 		course.setCourseCode(courseCode);
 		course.setCourseTitle(courseTitle);
 		
-		if(id.isEmpty() || id==null) {
-			  //save operation
-			if(courseDao.save(course)) {
-				request.setAttribute("message", "Saved successful!");
-			}
-		} else {
+		if((courseCode.isEmpty() || courseCode==null) || (courseTitle.isEmpty() || courseTitle==null) ) {
+			
+				
+			
+		}else {
+			
+			if(id.isEmpty() || id==null) {
+				  //save operation
+				if(courseDao.save(course)) {
+					request.setAttribute("message", "Saved successful!");
+				}
+			} else {
 
-			//update operation
-			course.setId(Integer.parseInt(id));
-			if(courseDao.update(course)) {
-				request.setAttribute("message", "Updated successful!");
-			}	
+				//update operation
+				course.setId(Integer.parseInt(id));
+				if(courseDao.update(course)) {
+					request.setAttribute("message", "Updated successful!");
+				}	
+			}
 		}
+		
+		
 		listCourses(request, response);
 		}
 	

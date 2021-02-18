@@ -9,7 +9,13 @@
 </head>
 <link href="https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
+
+
+	
 	<div class="container">
+	<div class="float-right">
+		<a href="${pageContext.request.contextPath}/AdminLogout.jsp">Logout</a>
+	</div>
 	<p>${message}</p>
 		<button class="btn btn-primary" onclick="window.location.href='views/Course_add.jsp'">Add Course </button>
 		<table border="1" class="table table-striped table-bordered">

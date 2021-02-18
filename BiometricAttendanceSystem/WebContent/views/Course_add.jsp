@@ -9,14 +9,25 @@
 <link href="https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
 	<div class="container">
+	 
+	  
+		<div class="float-right">
+		<a href="${pageContext.request.contextPath}/AdminLogout.jsp">Logout</a>
+		</div>
+			<div class="row">
+				<div class="col-md-4">
+				 <h2>Add Course</h2>
+					<form action="${pageContext.request.contextPath}/CourseController" method="post">
+					<input type="text" name="courseCode" value="${course.courseCode}" placeholder="Enter Course Code" class="form-control"/></br>
+					<input type="text" name="courseTitle" value="${course.courseTitle}" placeholder="Enter Course Title" class="form-control"/></br>
+					<input type="hidden" value="${course.id}" name="id">
+					<button class="btn btn-primary" type="submit">Save</button>
+					</form>
+				</div>
+				
+		 
+			</div>
 	
-	<form action="${pageContext.request.contextPath}/CourseController" method="post">
-		Enter Course code: <input type="text" name="courseCode" value="${course.courseCode}"/></br>
-		Enter Course title: <input type="text" name="courseTitle" value="${course.courseTitle}"/></br>
-		<input type="hidden" value="${course.id}" name="id">
-		<button class="btn btn-primary" type="submit">Save Course</button>
-	</form>
-		
 	</div>
 </body>
 </html>
