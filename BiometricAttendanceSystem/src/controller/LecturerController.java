@@ -1,6 +1,11 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -16,6 +21,7 @@ import dao.LecturerDao;
 import dao.LecturerDaoImpl;
 import entity.Course;
 import entity.Lecturer;
+import util.DBConnectionUtil;
 
 /**
  * Servlet implementation class CourseController
@@ -25,12 +31,13 @@ public class LecturerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	RequestDispatcher dispatcher = null;
-	//create reference variable for course dao
+	//create reference variable for  dao
 	LecturerDao lecturerDao = null;
 	
 	//create constructor and initialize dao
 	public LecturerController(){	
 		lecturerDao = new LecturerDaoImpl();
+		
 	}
        
    
@@ -68,7 +75,7 @@ public class LecturerController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("lecturerId");
+		String lecturerId = request.getParameter("lecturerId");
 		String lecturerTitle = request.getParameter("lecturerTitle");
 		String lecturerFirstName = request.getParameter("lecturerFirstName");
 		String lecturerLastName = request.getParameter("lecturerLastName");
@@ -91,7 +98,7 @@ public class LecturerController extends HttpServlet {
 		
 	
 			
-			if(id.isEmpty() || id==null) {
+			if(lecturerId.isEmpty() || lecturerId==null) {
 				  //save operation
 				if(lecturerDao.save(lecturer)) {
 					request.setAttribute("message", "Saved successful!");
@@ -99,7 +106,7 @@ public class LecturerController extends HttpServlet {
 			} else {
 
 				//update operation
-				lecturer.setLecturerId(Integer.parseInt(id));
+				lecturer.setLecturerId(Integer.parseInt(lecturerId));
 				if(lecturerDao.update(lecturer)) {
 					request.setAttribute("message", "Updated successful!");
 				}	
@@ -150,6 +157,7 @@ private void deleteLecturer(HttpServletRequest request, HttpServletResponse resp
 	listLecturers(request, response);
 	
 }
+
 
 }
 

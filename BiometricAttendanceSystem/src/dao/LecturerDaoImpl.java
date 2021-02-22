@@ -65,7 +65,7 @@ public class LecturerDaoImpl implements LecturerDao {
 	public boolean save(Lecturer lecturer) {
 		boolean flag = false;
 		try {
-			String sql = "INSERT INTO lecturers(title,first_name,last_name,email,password,course_code,course_title) VALUES('"+lecturer.getLecturerCourseTitle()+"','"+lecturer.getLecturerFirstName()+"','"+lecturer.getLecturerLastName()+"','"+lecturer.getLecturerEmail()+"','"+lecturer.getLecturerPassword()+"','"+lecturer.getLecturerCourseCode()+"','"+lecturer.getLecturerCourseTitle()+"')";
+			String sql = "INSERT INTO lecturers(title,first_name,last_name,email,password,course_code,course_title) VALUES('"+lecturer.getLecturerTitle()+"','"+lecturer.getLecturerFirstName()+"','"+lecturer.getLecturerLastName()+"','"+lecturer.getLecturerEmail()+"','"+lecturer.getLecturerPassword()+"','"+lecturer.getLecturerCourseCode()+"','"+lecturer.getLecturerCourseTitle()+"')";
 		connection =	DBConnectionUtil.openConnection();
 		preparedStatement = connection.prepareStatement(sql);
 		preparedStatement.executeUpdate();

@@ -9,13 +9,16 @@
 </head>
 <link href="https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
+    <a href="${pageContext.request.contextPath}/CourseController?action=LIST" class="btn btn-primary">Course List</a>
+         <a href="${pageContext.request.contextPath}/LecturerController?action=LIST" class="btn btn-primary">Lecturer List</a>
+         <a href="${pageContext.request.contextPath}/" class="btn btn-primary">Student List</a>
 
-
-	
-	<div class="container">
 	<div class="float-right">
 		<a href="${pageContext.request.contextPath}/AdminLogout.jsp">Logout</a>
 	</div>
+	<div class="container">
+	
+	
 	<p>${message}</p>
 		<button class="btn btn-primary" onclick="window.location.href='views/Lecturer_add.jsp'">Add Lecturer </button>
 		<table border="1" class="table table-striped table-bordered">

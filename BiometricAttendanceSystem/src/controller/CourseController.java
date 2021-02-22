@@ -95,6 +95,7 @@ public class CourseController extends HttpServlet {
 		
 		
 		listCourses(request, response);
+		
 		}
 	
 	

@@ -12,7 +12,7 @@ List<Lecturer> getLecturersList();
 	
 	Lecturer getLecturer(int id);
 	
-	boolean update(Lecturer c);
+	boolean update(Lecturer lecturer);
 	
 	boolean delete(int id);
 

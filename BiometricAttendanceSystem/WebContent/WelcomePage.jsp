@@ -34,7 +34,7 @@
 				
 			</div>
 			<div class="card-footer">
-				<input type="submit" value="login" class="btn btn-primary">
+				<input type="submit" value="Login" class="btn btn-primary">
 				
 			</div>
 			

@@ -8,7 +8,7 @@ import entity.Course;
 
 public interface CourseDao {
 	List<Course> get();
-	
+
 	boolean save(Course c);
 	
 	Course getCourse(int id);
