@@ -11,7 +11,7 @@
 
 	<a href="${pageContext.request.contextPath}/CourseController?action=LIST" class="btn btn-primary">Course List</a>
          <a href="${pageContext.request.contextPath}/LecturerController?action=LIST" class="btn btn-primary">Lecturer List</a>
-         <a href="${pageContext.request.contextPath}/" class="btn btn-primary">Student List</a>
+           <a href="${pageContext.request.contextPath}/StudentController?action=LIST" class="btn btn-primary">Student List</a>
 	  
 		<div class="float-right">
 		<a href="${pageContext.request.contextPath}/AdminLogout.jsp">Logout</a>
@@ -26,7 +26,7 @@
 					<input type="text" name="courseCode" value="${course.courseCode}" placeholder="Enter Course Code" class="form-control"/></br>
 					<input type="text" name="courseTitle" value="${course.courseTitle}" placeholder="Enter Course Title" class="form-control"/></br>
 					<input type="hidden" value="${course.id}" name="id">
-					<button class="btn btn-primary" type="submit">Save</button>
+					<button class="btn btn-primary" type="submit">Submit</button>
 					</form>
 				</div>
 				

@@ -31,6 +31,7 @@ public class CourseController extends HttpServlet {
 	}
        
    
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getParameter("action");
 		
@@ -78,7 +79,7 @@ public class CourseController extends HttpServlet {
 			
 		}else {
 			
-			if(id.isEmpty() || id==null) {
+			if(id.isEmpty()) {
 				  //save operation
 				if(courseDao.save(course)) {
 					request.setAttribute("message", "Saved successful!");

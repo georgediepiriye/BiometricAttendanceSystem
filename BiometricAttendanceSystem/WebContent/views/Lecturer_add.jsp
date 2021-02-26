@@ -16,7 +16,7 @@
 <body>
 <a href="${pageContext.request.contextPath}/CourseController?action=LIST" class="btn btn-primary">Course List</a>
          <a href="${pageContext.request.contextPath}/LecturerController?action=LIST" class="btn btn-primary">Lecturer List</a>
-         <a href="${pageContext.request.contextPath}/" class="btn btn-primary">Student List</a>
+         <a href="${pageContext.request.contextPath}/StudentController?action=LIST" class="btn btn-primary">Student List</a>
 	 
 	  
 		<div class="float-right">
@@ -37,7 +37,7 @@
 					<input type="text" name="lecturerPassword" value="${lecturer.lecturerPassword}" placeholder="Enter Password" class="form-control"/></br>
 					
 						
-					<label>Assign Course</label><br>
+					<label>Assign Course:</label><br>
 					
 					<select name="lecturerCourseCode" id="lecturerCourseCode">
 					<option>Select Course Code</option>
@@ -63,7 +63,7 @@
 					%>
 					
 					
-					</select></br></br>
+					</select></br>
 						<select name="lecturerCourseTitle" id="lecturerCourseTitle">
 						<option>Select Course Title</option>
 						<%
@@ -91,7 +91,7 @@
 						 
 						</select></br>
 					<input type="hidden" value="${lecturer.lecturerId}" name="lecturerId"></br>
-					<button class="btn btn-primary" type="submit">Save</button>
+					<button class="btn btn-primary" type="submit">Submit</button>
 					</form>
 				</div>
 				
