@@ -5,20 +5,21 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import entity.AdminLogin;
+import entity.Login;
+
 import util.DBConnectionUtil;
 
-public class AdminLoginDaoImpl implements AdminLoginDao{
+public class AdminLoginDaoImpl implements LoginDao{
 
 	@Override
-	public String authenticate(AdminLogin adminLogin) {
+	public String authenticate(Login adminLogin) {
 		String sql = "SELECT * FROM admin_login WHERE email=? AND password=? ";
 		try {
 			
 		   Connection connection = DBConnectionUtil.openConnection();
 		   PreparedStatement preparedStatement =  connection.prepareStatement(sql);
-		   preparedStatement.setString(1, adminLogin.getAdminEmail());
-		   preparedStatement.setString(2, adminLogin.getAdminPassword());
+		   preparedStatement.setString(1, adminLogin.getEmail());
+		   preparedStatement.setString(2, adminLogin.getPassword());
 		   ResultSet resultSet = preparedStatement.executeQuery();
 		   if(resultSet.next()) {
 			   return "true";
@@ -32,5 +33,6 @@ public class AdminLoginDaoImpl implements AdminLoginDao{
 		return "error";
 
 }
+
 	
 }

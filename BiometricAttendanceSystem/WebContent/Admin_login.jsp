@@ -5,9 +5,22 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+		  .center {
+margin: auto;
+margin-top:100px;
+  width: 50%;
+}
+
+.block{
+width: 100%;
+
+}
+</style>
 </head>
  <link href="https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
+
 
 		<%
 			String adminEmail =  (String)session.getAttribute("admin_email");
@@ -29,23 +42,23 @@
 		%>
 
 
-	<div class="container">
+	<div class="container center col-md-4">
 		<form action="AdminLoginProcess" method="post">
 		<div class="card">
 			<div class="card-header">
-				Admin Login
+				<h2 align="center">Admin</h2>
 			</div>
 			<div class="card-body">
 				
-					<input type="text" name="adminEmail" placeholder="Enter Email" class="form-control"></br>
+					<input type="text" name="adminEmail" placeholder="Enter Email" class="form-control" required="required"><br/>
 			
 				
-					<input type="password" name="adminPassword" placeholder="Enter Password" class="form-control"></br>
+					<input type="password" name="adminPassword" placeholder="Enter Password" class="form-control" required="required"></br>
 			
 				
 			</div>
 			<div class="card-footer">
-				<input type="submit" value="Login" class="btn btn-primary">
+				<input type="submit" value="Login" class="btn btn-primary block">
 			</div>
 			
 		</div>

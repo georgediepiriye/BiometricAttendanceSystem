@@ -7,7 +7,7 @@ import entity.Student;
 public interface StudentDao {
 	List<Student> get();
 	
-	boolean save(Student student);
+
 	
 	Student getStudent(int id);
 	

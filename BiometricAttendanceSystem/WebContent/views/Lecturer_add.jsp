@@ -11,10 +11,30 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+  .center {
+margin: auto;
+margin-top:20px;
+  width: 50%;
+  border: 1px solid grey;
+  padding: 10px;
+}
+
+.head{
+	margin: 10px;
+	
+}
+.block{
+width: 100%;
+
+
+}
+</style>
 </head>
 <link href="https://unpkg.com/bootstrap@4.1.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <body>
-<a href="${pageContext.request.contextPath}/CourseController?action=LIST" class="btn btn-primary">Course List</a>
+<div class="head">
+	<a href="${pageContext.request.contextPath}/CourseController?action=LIST" class="btn btn-primary">Course List</a>
          <a href="${pageContext.request.contextPath}/LecturerController?action=LIST" class="btn btn-primary">Lecturer List</a>
          <a href="${pageContext.request.contextPath}/StudentController?action=LIST" class="btn btn-primary">Student List</a>
 	 
@@ -22,19 +42,21 @@
 		<div class="float-right">
 		<a href="${pageContext.request.contextPath}/AdminLogout.jsp">Logout</a>
 		</div>
+</div>
+
 
 
 	<div class="container">
 	
 			<div class="row">
-				<div class="col-md-4">
-				 <h2>Add Lecturer</h2>
+				<div class="col-md-4 center">
+				 <h2 align="center">Add Lecturer</h2>
 					<form action="${pageContext.request.contextPath}/LecturerController" method="post">
-					<input type="text" name="lecturerTitle" value="${lecturer.lecturerTitle}" placeholder="Enter Title" class="form-control"/></br>
-					<input type="text" name="lecturerFirstName" value="${lecturer.lecturerFirstName}" placeholder="Enter Firstname" class="form-control"/></br>
-					<input type="text" name="lecturerLastName" value="${lecturer.lecturerLastName}" placeholder="Enter Lastname" class="form-control"/></br>
-					<input type="text" name="lecturerEmail" value="${lecturer.lecturerEmail}" placeholder="Enter Email" class="form-control"/></br>
-					<input type="text" name="lecturerPassword" value="${lecturer.lecturerPassword}" placeholder="Enter Password" class="form-control"/></br>
+					<input type="text" name="lecturerTitle" value="${lecturer.lecturerTitle}" placeholder="Enter Title" class="form-control" required="required"/><br/>
+					<input type="text" name="lecturerFirstName" value="${lecturer.lecturerFirstName}" placeholder="Enter Firstname" class="form-control" required="required"/><br/>
+					<input type="text" name="lecturerLastName" value="${lecturer.lecturerLastName}" placeholder="Enter Lastname" class="form-control" required="required"/><br/>
+					<input type="text" name="lecturerEmail" value="${lecturer.lecturerEmail}" placeholder="Enter Email" class="form-control" required="required"/><br/>
+					<input type="text" name="lecturerPassword" value="${lecturer.lecturerPassword}" placeholder="Enter Password" class="form-control" required="required"/><br/>
 					
 						
 					<label>Assign Course:</label><br>
@@ -63,7 +85,7 @@
 					%>
 					
 					
-					</select></br>
+					</select><br/>
 						<select name="lecturerCourseTitle" id="lecturerCourseTitle">
 						<option>Select Course Title</option>
 						<%
@@ -91,7 +113,7 @@
 						 
 						</select></br>
 					<input type="hidden" value="${lecturer.lecturerId}" name="lecturerId"></br>
-					<button class="btn btn-primary" type="submit">Submit</button>
+					<button class="btn btn-primary block" type="submit">Submit</button>
 					</form>
 				</div>
 				

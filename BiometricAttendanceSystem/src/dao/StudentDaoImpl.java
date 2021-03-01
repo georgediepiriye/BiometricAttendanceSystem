@@ -49,21 +49,7 @@ public class StudentDaoImpl implements StudentDao{
 	
 	}
 
-	@Override
-	public boolean save(Student student) {
-		boolean flag = false;
-		try {
-			String sql = "INSERT INTO students(matric_number,first_name,last_name,email,sex,path) VALUES('"+student.getStudentMatNum()+"','"+student.getStudentFirstName()+"','"+student.getStudentLastName()+"','"+student.getStudentEmail()+"','"+student.getStudentSex()+"','"+student.getStudentImagePath()+"')";
-		connection =	DBConnectionUtil.openConnection();
-		preparedStatement = connection.prepareStatement(sql);
-		preparedStatement.executeUpdate();
-		flag = true;
-		
-		}catch(SQLException ex) {
-			ex.printStackTrace();
-		}
-		return flag;
-	}
+	
 
 	@Override
 	public Student getStudent(int id) {
