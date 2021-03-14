@@ -8,45 +8,39 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import dao.LecturerLoginDaoImpl;
 import dao.LoginDao;
-import dao.AdminLoginDaoImpl;
 import entity.Login;
 
-@WebServlet("/AdminLoginController")
-public class AdminLoginController extends HttpServlet {
+
+@WebServlet("/LecturerLoginController")
+public class LecturerLoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	LoginDao loginDao = null;
-	
-	
        
-	public AdminLoginController() {
-		loginDao = new AdminLoginDaoImpl();
-	}
+  
+    public LecturerLoginController() {
+       loginDao = new LecturerLoginDaoImpl();
+    }
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		Login adminLogin = new Login();
-		adminLogin.setEmail(request.getParameter("adminEmail"));
-		adminLogin.setPassword(request.getParameter("adminPassword"));
+		Login lecturerLogin = new Login();
+		lecturerLogin.setEmail(request.getParameter("lecturerEmail"));
+		lecturerLogin.setPassword(request.getParameter("lecturerPassword"));
 		
-		String status = loginDao.authenticate(adminLogin);
-		
+		String status = loginDao.authenticate(lecturerLogin);
 		if(status.equals("true")) {
-			session.setAttribute("admin_email", adminLogin.getEmail());
-			response.sendRedirect("views/AdminHomePage.jsp");
+			session.setAttribute("lecturer_email", lecturerLogin.getEmail());
+			response.sendRedirect("views/LecturerHomePage.jsp");
 			
 		}
 		if(status.equals("false")) {
-			response.sendRedirect("Admin_login.jsp?status=false");
-			
+			response.sendRedirect("WelcomePage.jsp");
 		}
 		if(status.equals("error")) {
-			response.sendRedirect("Admin_login.jsp?status=error");
+			response.sendRedirect("WelcomePage.jsp");
 		}
-		
-
 	}
-
 }
- 

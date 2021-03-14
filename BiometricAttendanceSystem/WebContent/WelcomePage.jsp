@@ -37,7 +37,23 @@ body {
 	if(adminEmail !=null){
 	response.sendRedirect("views/AdminHomePage.jsp");
 	}
-	%>
+	
+			String lecturerEmail =  (String)session.getAttribute("lecturer_email");	
+		//if lecturer is already logged in,redirect to admin home page
+		    if(lecturerEmail != null){
+		    	response.sendRedirect("views/LecturerHomePage.jsp");
+		    }
+	
+		String status = request.getParameter("status");
+		if(status != null){
+			if(status.equals("false")){
+				out.print("Wrong Email or Password");
+			}else if(status.equals("error")){
+				out.print("An error occured!");
+			}
+		}
+		
+		%>
 
 		 <button class="btn btn-primary admin" onclick="window.location.href='Admin_login.jsp'">Admin</button>
 	<div class="container center col-md-4">
@@ -53,8 +69,8 @@ body {
 			</div>
 			<div class="card-body">
 				
-					<input type="text" name="adminEmail" placeholder="Enter Email" class="form-control"><br/>
-					<input type="password" name="adminPassword" placeholder="Enter Password" class="form-control"><br/>
+					<input type="text" name="lecturerEmail" placeholder="Enter Email" class="form-control"><br/>
+					<input type="password" name="lecturerPassword" placeholder="Enter Password" class="form-control"><br/>
 			
 				
 			</div>

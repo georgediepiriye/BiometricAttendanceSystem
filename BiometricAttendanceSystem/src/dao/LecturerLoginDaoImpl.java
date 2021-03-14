@@ -11,7 +11,7 @@ public class LecturerLoginDaoImpl implements LoginDao{
 
 	@Override
 	public String authenticate(Login lecturerLogin) {
-		String sql = "select from lecturers where email=? and password=?";
+		String sql = "select * from lecturers where email=? and password=?";
 		try {
 			Connection connection = DBConnectionUtil.openConnection();
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);

@@ -16,8 +16,18 @@
     <servlet-name>AdminLoginController</servlet-name>
     <servlet-class>controller.AdminLoginController</servlet-class>
   </servlet>
+  <servlet>
+    <description></description>
+    <display-name>LecturerLoginController</display-name>
+    <servlet-name>LecturerLoginController</servlet-name>
+    <servlet-class>controller.LecturerLoginController</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>AdminLoginController</servlet-name>
     <url-pattern>/AdminLoginProcess</url-pattern>
+  </servlet-mapping>
+   <servlet-mapping>
+    <servlet-name>LecturerLoginController</servlet-name>
+    <url-pattern>/LecturerLoginProcess</url-pattern>
   </servlet-mapping>
 </web-app>

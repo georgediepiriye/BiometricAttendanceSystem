@@ -16,7 +16,7 @@ public class Login {
 	public String getPassword() {
 		return password;
 	}
-	public void setAdminPassword(String password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 	private Integer id;

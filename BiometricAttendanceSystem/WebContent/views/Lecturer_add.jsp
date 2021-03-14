@@ -40,7 +40,7 @@ width: 100%;
 	 
 	  
 		<div class="float-right">
-		<a href="${pageContext.request.contextPath}/AdminLogout.jsp">Logout</a>
+		<a href="${pageContext.request.contextPath}/Logout.jsp">Logout</a>
 		</div>
 </div>
 
@@ -111,8 +111,8 @@ width: 100%;
 		
 %>
 						 
-						</select></br>
-					<input type="hidden" value="${lecturer.lecturerId}" name="lecturerId"></br>
+						</select><br/>
+					<input type="hidden" value="${lecturer.lecturerId}" name="lecturerId"><br/>
 					<button class="btn btn-primary block" type="submit">Submit</button>
 					</form>
 				</div>

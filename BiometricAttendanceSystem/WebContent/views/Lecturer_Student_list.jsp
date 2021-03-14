@@ -33,9 +33,9 @@ margin: 10px;
 <body>
 	
 <div class="head">
-	<a href="${pageContext.request.contextPath}/CourseController?action=LIST" class="btn btn-primary">Course List</a>
-         <a href="${pageContext.request.contextPath}/LecturerController?action=LIST" class="btn btn-primary">Lecturer List</a>
-           <a href="${pageContext.request.contextPath}/StudentController?action=LIST" class="btn btn-primary">Student List</a>
+	<button class="btn btn-primary admin" onclick="window.location.href='views/MarkAttendance.jsp'">Mark Attendance</button>
+         <a href="${pageContext.request.contextPath}/ViewAttendanceController?action=LIST" class="btn btn-primary">View Attendance</a>
+           <a href="${pageContext.request.contextPath}/LecturerStudentController?action=LIST" class="btn btn-primary">Student List</a>
 	  
 		<div class="float-right">
 		<a href="${pageContext.request.contextPath}/Logout.jsp">Logout</a>
@@ -49,7 +49,7 @@ margin: 10px;
 	
 	<div class="container" >
 	
-		<button class="btn btn-primary" onclick="window.location.href='views/Student_add.jsp'">Add Student </button>
+	
 		
 		<table border="1" class="table table-striped table-bordered" id="datatable">
 		
@@ -62,7 +62,7 @@ margin: 10px;
 			<th>Gender</th>
 			<th>Email</th>
 			
-			<th>Actions</th>
+			<th>Action</th>
 			
 		</tr>
 		</thead>
@@ -76,10 +76,8 @@ margin: 10px;
 				<td>${student.studentSex}</td>
 				<td>${student.studentEmail}</td>
 				<td>
-					<a href="${pageContext.request.contextPath}/StudentController?action=VIEW_IMAGE&id=${student.studentId}">Image</a>
-					<a href="${pageContext.request.contextPath}/StudentController?action=EDIT&id=${student.studentId}">Edit</a>
-					<a href="${pageContext.request.contextPath}/StudentController?action=DELETE&id=${student.studentId}">Delete</a>
-					
+					<a href="${pageContext.request.contextPath}/LecturerStudentController?action=VIEW_IMAGE&id=${student.studentId}">Image</a>
+		
 				</td>
 				
 				
